@@ -1,0 +1,111 @@
+// Font  ---------------------------------------------------
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,700&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap');
+
+
+$primary-font: 'Poppins', sans-serif;
+$secondary-font: 'Roboto', sans-serif;
+
+// Custom Font ---------------------------------------------------
+
+// @font-face{
+//     font-family:"century";
+//     src: url('../fonts/CENTURY.TTF');
+// }
+
+// Colors -------------------------------------------------------
+
+$white:             #ffffff;
+$black:             #000000;
+$border:            #d3d3d3;
+
+$primary:           #2B2D42;
+$secondary:         #D90429;
+$base:              #EDF2F4;
+
+$green:             #22C65B;
+$red:               #EF233C;
+
+
+// media screen Helper ------------------------------------------
+
+// 4K Screen
+@mixin max-3840 {
+    @media screen and (max-width:3840px) {
+        @content;
+    }
+}
+// 2K Screen
+@mixin min-2560 {
+    @media screen and (min-width:2560px) {
+        @content;
+    }
+}
+// FHD
+@mixin min-1920 {
+    @media screen and (min-width:1920px) {
+        @content;
+    }
+}
+@mixin max-1920 {
+    @media screen and (max-width:1920px) {
+        @content;
+    }
+}
+// Big-Desktop
+@mixin max-1440 {
+    @media screen and (max-width:1440px) {
+        @content;
+    }
+}
+// Desktop
+@mixin max-1366 {
+    @media screen and (max-width:1366px) {
+        @content;
+    }
+}
+@mixin max-1199 {
+    @media screen and (max-width:1199px) {
+        @content;
+    }
+}
+@mixin max-1024 {
+    @media screen and (max-width:1024px) {
+        @content;
+    }
+}
+@mixin max-991 {
+    @media screen and (max-width:991px) {
+        @content;
+    }
+}
+@mixin max-768 {
+    @media screen and (max-width:768px) {
+        @content;
+    }
+}
+@mixin max-767 {
+    @media screen and (max-width:767px) {
+        @content;
+    }
+}
+@mixin max-575 {
+    @media screen and (max-width:575px) {
+        @content;
+    }
+}
+@mixin max-420 {
+    @media screen and (max-width:420px) {
+        @content;
+    }
+}
+@mixin max-360 {
+    @media screen and (max-width:360px) {
+        @content;
+    }
+}
+@mixin max-320 {
+    @media screen and (max-width:320px) {
+        @content;
+    }
+}

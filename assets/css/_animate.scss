@@ -1,0 +1,65 @@
+#cubeone, #cubetwo, #cubethree, #cubefour, #cubefive, #cubesix, #cubeseven, #cubeeight, #cubenine, #cubeten{
+    animation-name: cubeone;
+    animation-duration: 5s;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+}
+#cubetwo{
+    animation-name: cubetwo;
+    animation-duration: 25s;
+}
+#cubethree{
+    animation-duration: 10s;
+}
+#cubefour{
+    animation-duration: 8s;
+}
+#cubefive{
+    animation-duration: 15s;
+}
+#cubesix{
+  animation-name: cubetwo;
+    animation-duration: 30s;
+}
+#cubeseven{
+  animation-duration: 6s;
+}
+#cubeeight{
+  animation-duration: 7s;
+}
+#cubenine{
+  animation-duration: 10s;
+}
+#cubeten{
+  animation-name: cubetwo;
+  animation-duration: 20s;
+}
+
+  @keyframes cubeone {
+    0% {
+      -webkit-transform: translate(0, 50px) rotate(0deg);
+              transform: translate(0, 50px) rotate(0deg);
+    }
+    50% {
+      -webkit-transform: translate(0, 0) rotate(0deg);
+              transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translate(0, 50px) rotate(0deg);
+              transform: translate(0, 50px) rotate(0deg);
+    }
+  }
+  @keyframes cubetwo {
+    0% {
+      -webkit-transform: translate(0, 100px) rotate(0deg);
+              transform: translate(0, 100px) rotate(0deg);
+    }
+    50% {
+      -webkit-transform: translate(0, 0) rotate(0deg);
+              transform: translate(0, 0) rotate(0deg);
+    }
+    100% {
+      -webkit-transform: translate(0, 100px) rotate(0deg);
+              transform: translate(0, 100px) rotate(0deg);
+    }
+  }
