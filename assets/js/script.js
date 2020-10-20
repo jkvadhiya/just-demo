@@ -73,3 +73,25 @@ function setHighlightWidth(target = null) {
 }
 
 setHighlightWidth();
+
+
+// backend code
+
+
+
+// column gap
+$("#column-gap").keyup(function () {
+    let cgap = $("#column-gap").val();
+    $(".content__view-inner").css('column-gap', +cgap);
+    // console.log(cgap);
+});
+// Row gap
+$("#row-gap").keyup(function () {
+    let rgap = $("#row-gap").val();
+    $(".content__view-inner").css('row-gap', +rgap);
+    // console.log(cgap);
+});
+
+
+
+// Add box
