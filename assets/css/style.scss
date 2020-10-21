@@ -834,8 +834,8 @@ header{
         &-inner{
             display: grid;
             gap: 20px 20px;
-            grid-template-rows: 200px 200px 200px;
-            grid-template-columns: 200px 200px 200px;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
             position: relative;
             place-items: stretch;
         }
@@ -899,6 +899,51 @@ header{
                         @include transform (translateY(0));
                         @include box-shadow(0,10px,20px,-10px, $red );
                     }
+                }
+            }
+        }
+    }
+}
+
+
+// Model
+.fancybox-content{
+    border-radius: 20px;
+    background-color: $base;
+}
+.fancybox-button{
+    display: none;
+}
+.fancybox-slide{
+    background-color: rgba(43, 45, 66, 0.80);
+}
+.fancybox-bg, .fancybox-is-open{
+    opacity: 1;
+    background-color: rgba(43, 45, 66, 0.50);
+}
+.compensate-for-scrollbar{
+    margin-right: 0;
+}
+#css{
+    display: none;
+}
+.css-model{
+    width: 1000px;
+    @include max-1920{
+        width: 800px;
+    }
+    @include max-1440{
+        width: 600px;
+    }
+    &__box{
+        &-inner{
+            border-radius: 20px;
+            @include space-between-center;
+            a.btn{
+                &:hover{
+                    background: $primary;
+                    @include transform (translateY(0));
+                    @include box-shadow(0,10px,20px,-10px, $primary );
                 }
             }
         }
