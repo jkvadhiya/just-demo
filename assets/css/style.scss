@@ -434,19 +434,9 @@ header{
         background-color: $white;
         @include border-radius(20px);
         @include box-shadow(0, 10px, 30px, 0, rgba(43, 45, 66, 0.20));
-        @include max-1366{
-            width: 40%;
-        }
         @include max-1024{
             width: 100%;
             margin-bottom: 50px;
-        }
-        &-img{
-            @include center;
-            padding: 10px 0;
-            img{
-                width: 60%;
-            }
         }
         &-title{
             text-align: center;
@@ -461,44 +451,110 @@ header{
                 padding-left: 10px;
             }
         }
-        &-undu-redu{
-            @include space-between-center;
-            padding-bottom: 20px;
-            a{
-                width: 40px;
-                height: 40px;
-                @include center;
-                background-color: $base;
-                @include border-radius(10px);
-                @include center;
-                color: $primary;
-                padding: 0;
-                i{
-                    @include transition(all 100ms);
-                }
-                &:hover{
-                    @include transform (translateY(0));
-                    i{
-                        @include transform (rotateZ(-40deg));
+        &-box{
+            padding: 0 0 20px 0;
+            &-child{
+                width: 100%;
+                padding: 10px 0 0 0;
+                @include flex;
+                @include justify-content(flex-end);
+                // position: relative;
+                &--inner{
+                    position: relative;
+                    width: 80%;
+                    padding: 10px;
+                    @include border-radius(10px);
+                    background-color: $base;
+                    @include center;
+                    @include justify-content(flex-end);
+                    &::before{
+                        content: '';
+                        position: absolute;
+                        width: 60px;
+                        left: -60px;
+                        top: -15px;
+                        height: 50px;
+                        border-bottom: 2px dashed rgba(43, 45, 66, 0.20);
+                        border-bottom-left-radius: 10px;
+                    }
+                    &::after{
+                        content: '';
+                        position: absolute;
+                        width: 70px;
+                        left: -96px;
+                        top: -10px;
+                        height: 3px;
+                        border-top: 2px dashed rgba(43, 45, 66, 0.20);
+                        @include transform (rotateZ(90deg));
+                        z-index: 1;
                     }
                 }
-                &:last-child{
-                    &:hover{
+                &--input{
+                    padding: 0 10px 0 0;
+                    input{
+                        @include border-radius(10px);
+                        width: 150px;
+                        border: none;
+                        outline: none;
+                        @include p;
+                        line-height: unset;
+                        font-weight: 600;
+                        padding: 10px;
+                        padding-right: 20px;
+                        text-align: right;
+                        color: $primary;
+                        text-transform: uppercase;
+                        @include max-1920{
+                            width: 90px;
+                        }
+                        @include max-1024{
+                            width: 70px;
+                            padding: 5px;
+                            border-radius: 5px;
+                        }
+                    }
+                }
+                &--remove{
+                    a{
+                        padding: 0;
+                        width: 48px;
+                        height: 48px;
+                        @include center;
+                        @include border-radius(10px);
+                        background-color: $red;
+                        color: $white;
+                        @include transition (all 500ms);
+                        &:hover{
+                            background: $red;
+                            @include transform (translateY(0));
+                            @include box-shadow(0,10px,20px,-10px, $red );
+                        }
                         i{
-                            @include transform (rotateZ(40deg));
+                            color: $white;
+                        }
+                        @include max-1920{
+                            width: 40px;
+                            height: 40px;
+                        }
+                        @include max-1440{
+                            width: 35px;
+                            height: 35px;
+                        }
+                        @include max-991{
+                            width: 30px;
+                            height: 30px;
+                            @include border-radius(5px);
                         }
                     }
                 }
             }
-            
-        }
-        &-box{
-            padding: 0 0 20px 0;
             &-inner{
                 width: 100%;
                 padding: 15px;
                 @include border-radius(10px);
                 background-color: $base;
+                z-index: 10;
+                position: relative;
                 
                 @include max-991{
                     padding: 8px;
@@ -510,38 +566,18 @@ header{
                         opacity: 1;
                         visibility: unset;
                     }
-                    .content__control-box-input{
-                        transform: translateX(0);
-                        opacity: 1;
-                        visibility: unset;
-                        padding-right: 0;
-                        @include max-1440{
-                            @include transform (translateX(10px));
-                        }
-                        @include max-991{
-                            @include transform (translateX(-20px));
-                        }
-                    }
                 }
             }
             form{
                 @include space-between-center;
             }
             &-content{
-                width: 170px;
                 @include flex;
-                @include max-1920{
-                    // width: 115px;
-                }
-                @include max-1440{
-                    width: 100px;
-                }
             }
             &-control{
-                width: 110px;
                 @include flex;
                 @include justify-content(flex-end);
-                @include transform (translateX(130px));
+                @include transform (translateX(20px));
                 opacity: 0;
                 visibility: hidden;
                 @include transition (all 500ms);
@@ -549,9 +585,6 @@ header{
                     @include transform (translateX(0));
                     opacity: 1;
                     visibility: unset;
-                }
-                @include max-991{
-                    width: 50px;
                 }
             }
             &-text{
@@ -572,61 +605,8 @@ header{
                     @include transform(rotateZ(-90deg));
                 }
             }
-            &-input{
-                width: calc(100% - 300px);
-                transform: translateX(130px);
-                opacity: 1;
-                visibility: unset;
-                @include transition (all 500ms);
-                text-align: right;
-                padding-right: 10px;
-                @include max-1920{
-                    width: calc(100% - 210px);
-                    transform: translateX(100px);
-                    padding-right: 0;
-                }
-                @include max-1440{
-                    width: calc(100% - 220px);
-                    transform: translateX(115px);
-                }
-                @include max-1024{
-                    width: calc(100% - 220px);
-                    transform: translateX(10px);
-                    @include border-radius(5px);
-                }
-                @include max-991{
-                    @include transform (translateX(-20px));
-                }
-                input{
-                    @include border-radius(10px);
-                    width: 120px;
-                    border: none;
-                    outline: none;
-                    @include p;
-                    line-height: unset;
-                    font-weight: 600;
-                    padding: 10px;
-                    padding-right: 20px;
-                    text-align: right;
-                    color: $primary;
-                    text-transform: uppercase;
-                    @include max-1920{
-                        width: 90px;
-                    }
-                    @include max-1440{
-                        width: 90px;
-                    }
-                    @include max-1024{
-                        width: 70px;
-                        padding: 5px;
-                        @include border-radius(5px);
-                    }
-                    @include max-991{
-                        width: 70px;
-                        padding: 5px;
-                        @include border-radius(5px);
-                    }
-                }
+            &-main{
+                @include center;
             }
             &-add,&-remove{
                 padding-left: 10px;
@@ -662,16 +642,6 @@ header{
                         width: 30px;
                         height: 30px;
                         @include border-radius(5px);
-                    }
-                }
-            }
-            &-remove{
-                a{
-                    background-color: $red;
-                    &:hover{
-                        background-color: $red;
-                        @include transform (translateY(0));
-                        @include box-shadow(0,10px,20px,-10px, $red );
                     }
                 }
             }
@@ -824,9 +794,6 @@ header{
         background-color: $white;
         @include border-radius(20px);
         @include box-shadow(0, 10px, 30px, 0, rgba(43, 45, 66, 0.20));
-        @include max-1366{
-            width: 55%;
-        }
         @include max-1024{
             width: 100%;
         }
