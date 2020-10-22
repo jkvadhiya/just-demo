@@ -35,7 +35,16 @@
 </head>
 
 <body>
+    <!-- preloader start -->
+    <div class="loader">
+        <div class="loader_inner"></div>
+    </div>
+    <!-- preloader end -->
+
+    <!-- cursor srart -->
     <div class="cursor"></div>
+    <!-- cursor end -->
+
     <div class="wrapper">
 
         <!-- header start -->
@@ -609,7 +618,7 @@
                                         <h2><i class="far fa-cog"></i> Control panel</h2>
                                     </div>
 
-                                    <div class="content__control-box">
+                                    <div id="col-here" class="content__control-box">
                                         <div class="content__control-box-inner">
                                             <form action="">
                                                 <div class="content__control-box-content">
@@ -622,40 +631,13 @@
                                                 </div>
                                                 <div class="content__control-box-control">
                                                     <div class="content__control-box-add">
-                                                        <a class="btn" id="#column" href="#"><i
-                                                                class="fal fa-plus"></i></a>
+                                                        <a id="col-add"><i class="fal fa-plus"></i></a>
                                                     </div>
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="content__control-box-child">
-                                            <div class="content__control-box-child--inner">
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="no">
-                                                </div>
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="fr">
-                                                </div>
-                                                <div class="content__control-box-child--remove">
-                                                    <a href="#"><i class="fal fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content__control-box-child">
-                                            <div class="content__control-box-child--inner">
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="no">
-                                                </div>
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="fr">
-                                                </div>
-                                                <div class="content__control-box-child--remove">
-                                                    <a href="#"><i class="fal fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
-                                    <div class="content__control-box">
+                                    <div id="row-here" class="content__control-box">
                                         <div class="content__control-box-inner">
                                             <form action="">
                                                 <div class="content__control-box-content">
@@ -669,36 +651,10 @@
                                                 </div>
                                                 <div class="content__control-box-control">
                                                     <div class="content__control-box-add">
-                                                        <a href="#"><i class="fal fa-plus"></i></a>
+                                                        <a id="row-add"><i class="fal fa-plus"></i></a>
                                                     </div>
                                                 </div>
                                             </form>
-                                        </div>
-                                        <div class="content__control-box-child">
-                                            <div class="content__control-box-child--inner">
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="No">
-                                                </div>
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="FR">
-                                                </div>
-                                                <div class="content__control-box-child--remove">
-                                                    <a href="#"><i class="fal fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="content__control-box-child">
-                                            <div class="content__control-box-child--inner">
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="No">
-                                                </div>
-                                                <div class="content__control-box-child--input">
-                                                    <input type="text" placeholder="FR">
-                                                </div>
-                                                <div class="content__control-box-child--remove">
-                                                    <a href="#"><i class="fal fa-trash-alt"></i></a>
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                     <div class="content__control-gap">

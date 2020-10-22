@@ -3,6 +3,7 @@
 @import "_variable";
 
 
+
 /*----------------------------------------*/
 /*  01 - Helper Class
 /*----------------------------------------*/
@@ -389,6 +390,10 @@ $font-p:                   16px;
 
 
 //   Mouse
+body{
+    // cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='%23eee' r='4'/%3E%3C/svg%3E") 3 3, auto;
+    cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='%23111' r='4'/%3E%3C/svg%3E") 3 3, auto;
+}
 .cursor {
     display: none;
     position: fixed;
@@ -403,7 +408,7 @@ $font-p:                   16px;
     transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1),
                 150ms height cubic-bezier(0.39, 0.575, 0.565, 1),
                 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
-    z-index: 1;
+    z-index: 11;
     pointer-events: none;
     will-change: transform;
   }
@@ -429,7 +434,33 @@ $font-p:                   16px;
                 150ms border-radius cubic-bezier(0.39, 0.575, 0.565, 1);
   }
   
-  html:not(html:hover) .cursor::after {
+html:not(html:hover) .cursor::after {
     opacity: 0;
     transform: scale(0);
-  }
+}
+
+.loader {
+	background: none repeat scroll 0 0 $base;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+    z-index: 9999; 
+    @include center;
+}
+
+.loader .loader_inner {
+	background-image: url("../images/light.gif");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+    width: 150px;
+    height: 150px;
+	// left: 50%;
+    // top: 50%;
+    // @include center;
+	position: absolute; 
+}

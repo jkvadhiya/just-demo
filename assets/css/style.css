@@ -269,6 +269,10 @@
   background-color: #EDF2F4;
 }
 
+body {
+  cursor: url("data:image/svg+xml,%3Csvg height='6' width='6' viewBox='0 0 8 8' xmlns='http://www.w3.org/2000/svg'%3E%3Ccircle cx='4' cy='4' fill='%23111' r='4'/%3E%3C/svg%3E") 3 3, auto;
+}
+
 .cursor {
   display: none;
   position: fixed;
@@ -285,7 +289,7 @@
   transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
   transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1);
   transition: 150ms width cubic-bezier(0.39, 0.575, 0.565, 1), 150ms height cubic-bezier(0.39, 0.575, 0.565, 1), 150ms transform cubic-bezier(0.39, 0.575, 0.565, 1), 150ms -webkit-transform cubic-bezier(0.39, 0.575, 0.565, 1);
-  z-index: 1;
+  z-index: 11;
   pointer-events: none;
   will-change: transform;
 }
@@ -318,6 +322,44 @@ html:not(html:hover) .cursor::after {
   opacity: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
+}
+
+.loader {
+  background: none repeat scroll 0 0 #EDF2F4;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: -webkit-box;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -moz-justify-content: center;
+  -ms-justify-content: center;
+  -o-justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.loader .loader_inner {
+  background-image: url("../images/light.gif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 150px;
+  height: 150px;
+  position: absolute;
 }
 
 #cubeone, #cubetwo, #cubethree, #cubefour, #cubefive, #cubesix, #cubeseven, #cubeeight, #cubenine, #cubeten {
@@ -1662,6 +1704,7 @@ header {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: none;
   border-radius: 10px;
   background-color: #22C65B;
   color: #ffffff;
@@ -2041,6 +2084,8 @@ header {
 }
 
 .content__view-inner {
+  width: 100%;
+  height: 100%;
   display: -ms-grid;
   display: grid;
   gap: 20px 20px;

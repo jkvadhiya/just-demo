@@ -1,4 +1,10 @@
+// Preloader
+$(window).on('load', function () {
 
+    $(".loader_inner").fadeOut();
+    $(".loader").delay(500).fadeOut("slow");
+
+});
 // Header
 $('.toggle-menu').click(function () {
     $('.sidebar').addClass('active');
@@ -36,63 +42,6 @@ function scrollNav() {
     });
 }
 scrollNav();
-
-
-
-
-// Smooth menu desktop
-let highlight;
-
-function addClass(target) {
-    target.classList.add('selector-item--active');
-}
-
-function selectItem(event) {
-    const target = event.target;
-    const items = document.querySelectorAll('.selector-item');
-    const parent = document.querySelector('.header__menu-inner ul');
-    const targetRect = target.getBoundingClientRect();
-    const parentRect = parent.getBoundingClientRect();
-
-    items.forEach(el => el.classList.remove('selector-item--active'));
-
-    highlight.style.left = `${targetRect.left - parentRect.left}px`;
-
-    addClass(target);
-    setHighlightWidth(target);
-}
-
-function setHighlightWidth(target = null) {
-    const itemTarget = target || document.querySelector('.selector-item');
-    const rect = itemTarget.getBoundingClientRect();
-
-    addClass(itemTarget)
-
-    highlight = document.querySelector('.highlight');
-    highlight.style.width = `${rect.width}px`;
-}
-
-setHighlightWidth();
-
-
-// backend code
-
-
-
-// column gap
-$("#column-gap").keyup(function () {
-    let cgap = $("#column-gap").val();
-    $(".content__view-inner").css('column-gap', +cgap);
-    // console.log(cgap);
-});
-// Row gap
-$("#row-gap").keyup(function () {
-    let rgap = $("#row-gap").val();
-    $(".content__view-inner").css('row-gap', +rgap);
-    // console.log(cgap);
-});
-
-
 
 // Mouse
 const updateProperties = (elem, state) => {
@@ -146,3 +95,76 @@ document.querySelectorAll('.cursor').forEach(cursor => {
     })
 })
 
+// Smooth menu desktop
+let highlight;
+
+function addClass(target) {
+    target.classList.add('selector-item--active');
+}
+
+function selectItem(event) {
+    const target = event.target;
+    const items = document.querySelectorAll('.selector-item');
+    const parent = document.querySelector('.header__menu-inner ul');
+    const targetRect = target.getBoundingClientRect();
+    const parentRect = parent.getBoundingClientRect();
+
+    items.forEach(el => el.classList.remove('selector-item--active'));
+
+    highlight.style.left = `${targetRect.left - parentRect.left}px`;
+
+    addClass(target);
+    setHighlightWidth(target);
+}
+
+function setHighlightWidth(target = null) {
+    const itemTarget = target || document.querySelector('.selector-item');
+    const rect = itemTarget.getBoundingClientRect();
+
+    addClass(itemTarget)
+
+    highlight = document.querySelector('.highlight');
+    highlight.style.width = `${rect.width}px`;
+}
+
+setHighlightWidth();
+
+
+
+// column gap
+$("#column-gap").keyup(function () {
+    let cgap = $("#column-gap").val();
+    $(".content__view-inner").css('column-gap', +cgap);
+    // console.log(cgap);
+});
+// Row gap
+$("#row-gap").keyup(function () {
+    let rgap = $("#row-gap").val();
+    $(".content__view-inner").css('row-gap', +rgap);
+    // console.log(cgap);
+});
+
+// Add row
+$(document).ready(function () {
+    $("#col-add").click(function () {
+        $(".content__view-inner").css('grid-template-columns', '1fr');
+        // console.log(cgap);
+        $("#col-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+    });
+    $("#row-add").click(function () {
+        $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+    });
+});
+
+
+
+// on add row button pr  grid-template-columns add karavani chhe using for loop i++
+
+for (var i = 0, l = arr.length; i < l; i++) {
+    sum += arr[i];
+}
+console.log(sum);
+
+$("li").each(function (index) {
+    console.log(index + ": " + $(this).text());
+});
