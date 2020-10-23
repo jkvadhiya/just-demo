@@ -157,8 +157,8 @@ $("#row-gap").keyup(function () {
 // });
 
 // Add row
-let frrow = "1fr 1fr 1fr";
-let frcol = "1fr 1fr 1fr";
+let frrow = " ";
+let frcol = " ";
 $(document).ready(function () {
     $("#col-add").click(function () {
         frrow += "1fr ";
@@ -168,7 +168,7 @@ $(document).ready(function () {
     });
     $("#row-add").click(function () {
         frcol += "1fr ";
-        $(".content__view-inner").css('grid-template-columns', frcol);
+        $(".content__view-inner").css('grid-template-rows', frcol);
         $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
     });
 });
