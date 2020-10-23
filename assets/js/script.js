@@ -144,27 +144,42 @@ $("#row-gap").keyup(function () {
     // console.log(cgap);
 });
 
+// // Add row
+// $(document).ready(function () {
+//     $("#col-add").click(function () {
+//         $(".content__view-inner").css('grid-template-columns', '1fr');
+//         // console.log(cgap);
+//         $("#col-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+//     });
+//     $("#row-add").click(function () {
+//         $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+//     });
+// });
+
 // Add row
+let frrow = "1fr 1fr 1fr";
+let frcol = "1fr 1fr 1fr";
 $(document).ready(function () {
     $("#col-add").click(function () {
-        $(".content__view-inner").css('grid-template-columns', '1fr');
+        frrow += "1fr ";
+        $(".content__view-inner").css('grid-template-columns', frrow);
         // console.log(cgap);
         $("#col-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
     });
     $("#row-add").click(function () {
+        frcol += "1fr ";
+        $(".content__view-inner").css('grid-template-columns', frcol);
         $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
     });
 });
 
-
-
 // on add row button pr  grid-template-columns add karavani chhe using for loop i++
 
-for (var i = 0, l = arr.length; i < l; i++) {
-    sum += arr[i];
-}
-console.log(sum);
+// for (var i = 0, l = arr.length; i < l; i++) {
+//     sum += arr[i];
+// }
+// console.log(sum);
 
-$("li").each(function (index) {
-    console.log(index + ": " + $(this).text());
-});
+// $("li").each(function (index) {
+//     console.log(index + ": " + $(this).text());
+// });

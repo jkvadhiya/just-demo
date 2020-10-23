@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>add col & row</title>
+</head>
+<style>
+    .content__view {
+        width: 100%;
+        height: 500px;
+        display: grid;
+        gap: 20px 20px;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        position: relative;
+        place-items: stretch;
+    }
+</style>
+
+<body>
+
+    <section>
+        <div id="row-here" class="content__control-box">
+            <div class="content__control-box-inner">
+                <div class="content__control-box-control">
+                    <div class="content__control-box-add">
+                        <a id="row-add">add row</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="content__view">
+            <div class="content__view-inner">
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+        integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+        crossorigin="anonymous"></script>
+    <script>
+        // Add row
+        $(document).ready(function () {
+            $("#row-add").click(function () {
+                $(".content__view-inner").css('grid-template-columns', '1fr');
+                // console.log(cgap);
+                $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
