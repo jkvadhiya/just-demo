@@ -157,19 +157,33 @@ $("#row-gap").keyup(function () {
 // });
 
 // Add row
-let frrow = "1fr 1fr 1fr";
-let frcol = "1fr 1fr 1fr";
+let frrow = "";
+let frcol = "";
 $(document).ready(function () {
+    $(document).on("click","a#colFrRemove",function (e) {
+        e.preventDefault();
+        var lastIndex = frrow.lastIndexOf(" ");
+        frrow = frrow.substring(0, lastIndex);
+        $(".content__view-inner").css('grid-template-columns', frrow);
+        $(this).closest(".content__control-box-child").remove();
+    });
+    $(document).on("click","a#rowFrRemove",function (e) {
+        e.preventDefault();
+        var lastIndex = frcol.lastIndexOf(" ");
+        frcol = frcol.substring(0, lastIndex);
+        $(".content__view-inner").css('grid-template-rows', frcol);
+        $(this).closest(".content__control-box-child").remove();
+    });
     $("#col-add").click(function () {
-        frrow += "1fr ";
+        frrow += " 1fr";
         $(".content__view-inner").css('grid-template-columns', frrow);
         // console.log(cgap);
-        $("#col-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+        $("#col-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#" id="colFrRemove"><i class="fal fa-trash-alt"></i></a></div></div></div>');
     });
     $("#row-add").click(function () {
-        frcol += "1fr ";
-        $(".content__view-inner").css('grid-template-columns', frcol);
-        $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#"><i class="fal fa-trash-alt"></i></a></div></div></div>');
+        frcol += " 1fr";
+        $(".content__view-inner").css('grid-template-rows', frcol);
+        $("#row-here").append('<div class="content__control-box-child"><div class="content__control-box-child--inner"><div class="content__control-box-child--input"><input placeholder="No"></div><div class="content__control-box-child--input"><input placeholder="FR"></div><div class="content__control-box-child--remove"><a href="#" id="rowFrRemove"><i class="fal fa-trash-alt"></i></a></div></div></div>');
     });
 });
 
